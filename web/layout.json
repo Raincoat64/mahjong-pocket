@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "layout": {
+    "--tile-h": 34,
+    "--hand-overlap": 0,
+    "--river-h": 31,
+    "--river-gap": 1,
+    "--hint-h": 74,
+    "--control-h": 54,
+    "--side-cpu-tile-h": 15,
+    "--side-cpu-overlap": 4,
+    "--side-cpu-x": 0,
+    "--side-cpu-y": 0,
+    "--top-cpu-tile-h": 19,
+    "--top-cpu-overlap": 3,
+    "--top-river-x": 0,
+    "--top-river-y": 0,
+    "--left-river-x": 0,
+    "--left-river-y": 0,
+    "--right-river-x": -8,
+    "--right-river-y": 0,
+    "--top-meld-x": 0,
+    "--top-meld-y": 8,
+    "--left-meld-x": 0,
+    "--left-meld-y": 12,
+    "--right-meld-x": 0,
+    "--right-meld-y": 12
+  },
+  "hudOffsets": {
+    "centerBoard": {
+      "x": 0,
+      "y": 60
+    },
+    "leftMeld": {
+      "x": -80,
+      "y": 115
+    },
+    "leftScore": {
+      "x": -35,
+      "y": -50
+    },
+    "rightScore": {
+      "x": 10,
+      "y": -50
+    },
+    "rightMeld": {
+      "x": 80,
+      "y": -45
+    },
+    "leftRiver": {
+      "x": -5,
+      "y": 30
+    },
+    "rightRiver": {
+      "x": -20,
+      "y": 30
+    },
+    "topRiver": {
+      "x": 0,
+      "y": 60
+    },
+    "rightHand": {
+      "x": 15,
+      "y": 0
+    },
+    "leftHand": {
+      "x": -15,
+      "y": -2
+    },
+    "topScore": {
+      "x": 0,
+      "y": -40
+    },
+    "topMeld": {
+      "x": 35,
+      "y": -50
+    },
+    "topHand": {
+      "x": 0,
+      "y": 10
+    },
+    "myRiver": {
+      "x": 0,
+      "y": -130
+    },
+    "myScore": {
+      "x": 0,
+      "y": 60
+    }
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-test/
+.browser-cache/
+test-results/
+*.tsbuildinfo
+.env
+.env.*
+.codex/
+.agents/
+.codex-handoff/

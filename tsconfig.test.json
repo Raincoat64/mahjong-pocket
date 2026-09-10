@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": "src",
+    "outDir": "dist-test",
+    "declaration": true,
+    "lib": [
+      "ES2022",
+      "DOM"
+    ]
+  },
+  "include": [
+    "src/core/**/*.ts",
+    "src/engine/**/*.ts",
+    "src/hint/**/*.ts",
+    "src/ai/**/*.ts",
+    "src/adapter/**/*.ts",
+    "src/rules/**/*.ts",
+    "src/persistence/**/*.ts",
+    "src/ui/**/*.ts",
+    "src/browser/**/*.ts"
+  ]
+}

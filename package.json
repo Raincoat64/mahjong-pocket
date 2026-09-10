@@ -1,0 +1,31 @@
+{
+  "name": "mahjong-pocket",
+  "version": "0.6.0-rc.3",
+  "packageManager": "pnpm@11.19.0",
+  "private": true,
+  "description": "Offline CPU riichi mahjong for Safari — release candidate",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build-notices.cjs && vite build && node scripts/build-offline.cjs dist",
+    "preview": "vite preview",
+    "typecheck:core": "tsc -p tsconfig.test.json --noEmit",
+    "build:core": "tsc -p tsconfig.test.json",
+    "test:core": "tsc -p tsconfig.test.json && node --test test/*.test.cjs",
+    "smoke": "tsc -p tsconfig.test.json && node scripts/smoke.cjs",
+    "stress": "tsc -p tsconfig.test.json && node scripts/stress.cjs 200",
+    "stress:match": "tsc -p tsconfig.test.json && node scripts/match-stress.cjs 100",
+    "browser:bundle": "tsc -p tsconfig.test.json && node scripts/bundle-browser.cjs",
+    "serve": "node scripts/serve.cjs"
+  },
+  "dependencies": {
+    "@kobalab/majiang-core": "1.4.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "5.2.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "vitest": "3.2.7"
+  }
+}

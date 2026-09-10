@@ -1,0 +1,38 @@
+[
+  {
+    "name": "@kobalab/majiang-core",
+    "version": "1.4.1",
+    "license": "MIT",
+    "purpose": "formal scoring runtime; adapted local shanten implementation"
+  },
+  {
+    "name": "react",
+    "version": "19.2.8",
+    "license": "MIT",
+    "purpose": "UI runtime"
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.8",
+    "license": "MIT",
+    "purpose": "UI runtime"
+  },
+  {
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT",
+    "purpose": "React scheduling runtime"
+  },
+  {
+    "name": "vite",
+    "version": "7.3.6",
+    "license": "MIT",
+    "purpose": "generated module-preload helper; build tool"
+  },
+  {
+    "name": "esbuild",
+    "version": "0.28.2",
+    "license": "MIT",
+    "purpose": "generated JavaScript helpers; build tool"
+  }
+]
