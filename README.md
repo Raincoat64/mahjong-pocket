@@ -1,4 +1,4 @@
-# Mahjong Pocket 0.6.0-rc.3
+# Mahjong Pocket 0.6.0
 
 [Safariで公開版を開く](https://raincoat64.github.io/mahjong-pocket/)
 
@@ -56,7 +56,9 @@ node scripts/benchmark-cpu.cjs 100
 
 ## 状況と資料
 
-主な対象はiPhoneの縦画面です。WebKitで6種類の表示領域、鳴き選択時のぼかし解除、終局までの実操作、破損回復、保存失敗、複数画面の競合防止、オフラインでの一局完走、更新時の局面維持を検証済み。iPhone/Mac Safari実機とAndroid実機のインストール・性能確認は未実施のため、リリース候補としています。
+主な対象はiPhoneの縦画面です。WebKitで6種類の表示領域、鳴き選択時のぼかし解除、終局までの実操作、破損回復、保存失敗、複数画面の競合防止、オフラインでの一局完走、更新時の局面維持を検証済みです。
+
+2026-09-10、ユーザーがiPhone Safariで起動・打牌・中断後の復元、およびホーム画面追加後の機内モードでの起動・一局完了・中断後の復元を確認しました。Mac Safari、Android実機、VoiceOverの追加確認は未実施です。
 
 - [検証結果](TEST_REPORT.md)
 - [レビューと残る確認事項](REVIEW_REPORT.md)

@@ -1,9 +1,9 @@
 {
   "name": "mahjong-pocket",
-  "version": "0.6.0-rc.3",
+  "version": "0.6.0",
   "packageManager": "pnpm@11.19.0",
   "private": true,
-  "description": "Offline CPU riichi mahjong for Safari — release candidate",
+  "description": "Offline CPU riichi mahjong for Safari",
   "scripts": {
     "dev": "vite",
     "build": "node scripts/build-notices.cjs && vite build && node scripts/build-offline.cjs dist",
