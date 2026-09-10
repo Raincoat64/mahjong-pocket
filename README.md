@@ -1,5 +1,7 @@
 # Mahjong Pocket 0.6.0-rc.3
 
+[Safariで公開版を開く](https://raincoat64.github.io/mahjong-pocket/)
+
 スキマ時間に遊ぶ四人CPU麻雀。一局戦・東風戦、弱い・普通・強いCPUを備えます。通信対戦・アカウント・広告・外部解析はありません。
 
 ## 遊び方

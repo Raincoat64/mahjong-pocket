@@ -60,7 +60,11 @@ Windows版WebKitの context.setOffline は内部エラーとなったため、�
 
 依存固定後の pnpm install --lockfile-only --frozen-lockfile --offline が合格。production build・ライセンス生成・キャッシュ一覧生成が合格。
 
-配布用フォルダーで `pnpm install --frozen-lockfile` → `pnpm test:core` → `pnpm build` が合格。元作業フォルダーのnode_modulesへ依存せず、同じビルド出力（cache 9351bfcafe822d12）を生成した。GitHub Actions上での実行とPagesへの配置は、まだ実施していない。
+配布用フォルダーで `pnpm install --frozen-lockfile` → `pnpm test:core` → `pnpm build` が合格。元作業フォルダーのnode_modulesへ依存せず、同じビルド出力を生成した。
+
+2026-09-10、[GitHub Actions](https://github.com/Raincoat64/mahjong-pocket/actions/runs/34457532417)でも固定依存のインストール・117件のコア検証・production buildが合格し、GitHub Pagesへの配置が成功した。初回は新規Pages環境の既定値がmainブランチ限定だったため公開ジョブが開始前に失敗。対象を実際の既定ブランチcodex/github-pagesに合わせ、成功済みビルドを再利用して公開ジョブのみ再実行した。
+
+[実際の公開URL](https://raincoat64.github.io/mahjong-pocket/)をWebKitで開き、HTTP200・47ファイルのキャッシュ・公開パス内のスコープ・中断保存の完全一致・自分のポン選択でぼかしなし・ポンの中央表示を確認。ページ例外と公開パス外へのリクエストはゼロだった。この確認はiPhone実機確認とは別である。
 
 再現ツールは固定seed・操作列の一致、保存地点で分割した実行の一致、失敗操作での停止を3件で確認。公開用のpnpm設定はesbuildだけにインストール時ビルドを許可する。npmへの内部依存を外し、pnpmだけで検証コマンドを実行できる構成にした。
 
