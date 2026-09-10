@@ -68,6 +68,9 @@ body{margin:0}button,input{font:inherit}button{cursor:pointer;touch-action:manip
 .home-footer button{padding:0;background:transparent;color:inherit;font-size:inherit}.home-footer button+span{border-left:1px solid #cad3c6;padding-left:18px}
 /* Own call choices keep the hand sharp while the player decides. */
 .call-dialog{backdrop-filter:none;-webkit-backdrop-filter:none}
+.result-hand{padding:12px 0;border-top:1px solid var(--line)}.result-hand h3{display:flex;justify-content:space-between;font-size:14px;margin:0 0 9px}.result-hand h3 span{font-size:12px;color:var(--muted)}
+.result-hand-tiles{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.result-hand-tiles img{width:100%;aspect-ratio:66/90;border:1px solid #cdd6c4;border-radius:4px;background:#fffefa;padding:1px}
+.result-hand-melds{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}.result-hand-melds>div{display:flex;gap:2px}.result-hand-melds img{height:32px;background:#fffefa;border:1px solid #cdd6c4;border-radius:3px;padding:1px}.result-hands-back{width:100%;margin-top:8px;position:sticky;bottom:0}
 /* Browser chrome on shorter iPhones must not push the hand below the viewport. */
 @media(max-height:620px){
  #table{min-height:520px}

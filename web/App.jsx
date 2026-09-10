@@ -59,10 +59,20 @@ function CallChooser({actions,onAct,onCancel,onPause,busy}){return <Modal title=
   return <button className="secondary call-choice" key={i} disabled={busy} onClick={()=>onAct(a)}><span className="call-choice-name">{label(a)}</span><span className="call-choice-tiles">{tiles.map((tile,j)=><Tile key={j} code={tile} className={a.calledTile===tile&&tiles.indexOf(tile)===j?'called-source':''}/>)}</span></button>;
   })}</div>{onCancel&&<button className="ghost" onClick={onCancel}>戻る</button>}<button className="ghost" disabled={busy} onClick={onPause}>中断</button></Modal>;}
 function RoundResultModal({game}){
+  const [showHands,setShowHands]=useState(false);
   const r=game.vm.result;
   const relation=r.type==='MATCH'?'対局終了':r.winType==='RON'?`${r.winners.map(seatName).join('・')}が${seatName(r.loser)}からロン`:r.winType==='TSUMO'?`${r.winners.map(seatName).join('・')}がツモ`:r.drawReason==='NAGASHI_MANGAN'?`${r.winners.map(seatName).join('・')}の流し満貫`:'流局';
   const matchFinished=r.type==='MATCH';
   const ids=matchFinished?[...game.session.match.result.ranking]:[0,1,2,3];
+  if(showHands)return <Modal title="終局時の手牌" className="result-hands-dialog">
+    <h2>終局時の手牌</h2>
+    {['self','right','top','left'].map(seat=>{const player=game.vm.players[seat];return <section className="result-hand" key={seat}>
+      <h3>{names[seat]} <span>{r.winners?.includes(player.playerId)?'和了':r.loser===player.playerId?'放銃':''}</span></h3>
+      <div className="result-hand-tiles">{[...player.hand].sort((a,b)=>tileOrder(a)-tileOrder(b)).map((code,i)=><Tile code={code} key={i}/>)}</div>
+      {!!player.melds.length&&<div className="result-hand-melds">{player.melds.map((meld,i)=><div key={i}>{meld.tiles.map((code,j)=><Tile code={code} key={j}/>)}</div>)}</div>}
+    </section>;})}
+    <button className="primary result-hands-back" onClick={()=>setShowHands(false)}>結果に戻る</button>
+  </Modal>;
   return <Modal title="対局結果">
     <h2>{relation}</h2>
     {matchFinished?<p>おつかれさまでした。また、ひと息つくときに。</p>:r.winningTile&&<div className="result-winning-tile"><Tile code={r.winningTile}/></div>}
@@ -74,6 +84,7 @@ function RoundResultModal({game}){
       </>}
     </div>)}</div>
     <div className="modal-actions">
+      {!matchFinished&&<button className="ghost" onClick={()=>setShowHands(true)}>手牌を確認</button>}
       {game.session.match.phase==='ROUND_RESULT'&&<button className="primary" disabled={game.busy} onClick={game.next}>{game.session.match.pendingNext==='MATCH_END'?'最終結果へ':'次の局へ'}</button>}
       <button className="secondary" disabled={game.busy} onClick={game.home}>ホームへ</button>
     </div>
